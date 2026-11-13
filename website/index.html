@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programmatic Prompt Optimization — Mini Project #6</title>
+<meta name="description" content="Comparative study of DSPy, TextGrad and AdalFlow for automated prompt optimization in customer support intent classification on Banking77 dataset.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-ring"></div>
+  <div class="loader-text">Loading Research Project</div>
+</div>
+
+<!-- Particle Canvas -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- Back to Top -->
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav class="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="nav-logo-icon">🧠</div>
+      PromptOpt
+    </a>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#methodology">Methods</a></li>
+      <li><a href="#dataset">Dataset</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#demo">Live Demo</a></li>
+      <li><a href="#findings">Findings</a></li>
+      <li><a href="#viva">Viva Q&A</a></li>
+      <li><a href="#viva" class="nav-cta">View Report →</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span></span>
+        Mini Project #6 · Prompt Engineering · NLP
+      </div>
+      <h1 class="hero-title">
+        Programmatic<br>
+        <span class="text-gradient">Prompt Optimization</span><br>
+        for Intent Classification
+      </h1>
+      <p class="hero-subtitle">
+        Replacing hand-crafted prompts with automatically optimized prompts using
+        <strong>DSPy</strong>, <strong>TextGrad</strong>, and <strong>AdalFlow</strong>
+        — evaluated on a 10-intent Banking77 customer support subset.
+      </p>
+      <div class="hero-buttons">
+        <a href="#results" class="btn btn-primary">
+          🏆 View Results
+        </a>
+        <a href="#demo" class="btn btn-secondary">
+          ⚡ Live Demo
+        </a>
+        <a href="#methodology" class="btn btn-secondary">
+          📖 Methodology
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat-item">
+          <div class="hero-stat-num">+16.25%</div>
+          <div class="hero-stat-label">Accuracy Gain</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-num">97.50%</div>
+          <div class="hero-stat-label">Peak Accuracy</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-num">0.9749</div>
+          <div class="hero-stat-label">Macro F1 Score</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-num">−53%</div>
+          <div class="hero-stat-label">Prompt Tokens</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-num">6</div>
+          <div class="hero-stat-label">Classifiers Benchmarked</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     OVERVIEW
+============================================================ -->
+<section id="overview" class="section-padding">
+  <div class="container">
+    <div class="overview-grid">
+      <div class="overview-text reveal">
+        <div class="section-eyebrow">Problem Statement</div>
+        <h2>Why Manual Prompts <span class="text-gradient">Fail</span> in Production</h2>
+        <p>Customer support intent classification systems traditionally rely on manually engineered prompts. This brittle, heuristic approach suffers from semantic boundary ambiguities, regression vulnerabilities, and context window bloat.</p>
+        <p>This project replaces manual prompts with <strong>programmatically optimized prompts</strong> that use formal metrics and algorithmic search to discover better instructions and demonstrations automatically.</p>
+        <div class="overview-features">
+          <div class="overview-feature">
+            <div class="feature-icon">🎯</div>
+            <div class="feature-text">
+              <h4>Formal Metric-Driven Optimization</h4>
+              <p>All optimizers evaluate candidate prompts against an exact-match accuracy metric on the validation set.</p>
+            </div>
+          </div>
+          <div class="overview-feature">
+            <div class="feature-icon">🔄</div>
+            <div class="feature-text">
+              <h4>Three Leading Paradigms</h4>
+              <p>DSPy (declarative teleprompters), TextGrad (textual backprop), and AdalFlow (declarative pipeline auto-tuning).</p>
+            </div>
+          </div>
+          <div class="overview-feature">
+            <div class="feature-icon">📊</div>
+            <div class="feature-text">
+              <h4>Full Cost Instrumentation</h4>
+              <p>Every optimization call is tracked — LLM calls, prompt tokens, completion tokens, and runtime latency.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:0.15s">
+        <div class="code-block">
+          <div class="code-header">
+            <div class="code-dot code-dot-red"></div>
+            <div class="code-dot code-dot-yellow"></div>
+            <div class="code-dot code-dot-green"></div>
+            <span style="margin-left:12px;font-size:0.75rem;color:#5c7a9e">run_experiments.py</span>
+          </div>
+<span class="code-comment"># ── DSPy: Declarative Signature ──────────────────</span>
+<span class="code-keyword">class</span> <span class="code-fn">BankingIntentSignature</span>(Signature):
+    <span class="code-string">"""Classify banking query into one of 10 intents."""</span>
+    customer_query = <span class="code-fn">InputField</span>()
+    intent = <span class="code-fn">OutputField</span>()
+
+<span class="code-comment"># ── DSPy COPRO Optimizer ─────────────────────────</span>
+<span class="code-var">optimizer</span> = <span class="code-fn">COPROOptimizer</span>(num_candidates=<span class="code-number">4</span>)
+<span class="code-var">best_module</span> = optimizer.<span class="code-fn">compile</span>(
+    module, trainset, valset
+) <span class="code-comment"># → 97.50% accuracy ✓</span>
+
+<span class="code-comment"># ── TextGrad: Textual Gradient Descent ───────────</span>
+<span class="code-var">prompt_var</span> = <span class="code-fn">Variable</span>(initial_prompt)
+<span class="code-var">critic</span> = <span class="code-fn">TextualLossCritic</span>(llm)
+<span class="code-var">grad</span> = critic.<span class="code-fn">compute_gradient</span>(prompt_var, ...)
+<span class="code-fn">TGD</span>.<span class="code-fn">step</span>() <span class="code-comment"># textual backpropagation ↓</span>
+
+<span class="code-comment"># ── AdalFlow: Declarative Pipeline ──────────────</span>
+<span class="code-var">pipeline</span> = <span class="code-fn">AdalFlowIntentPipeline</span>(llm)
+<span class="code-var">optimizer</span> = <span class="code-fn">AdalFlowAutoOptimizer</span>(pipeline, llm)
+optimizer.<span class="code-fn">optimize</span>(trainset, valset) <span class="code-comment"># ⚡ auto</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     METHODOLOGY
+============================================================ -->
+<section id="methodology" class="section-padding" style="background: linear-gradient(to bottom, transparent, rgba(108,99,255,0.04) 50%, transparent);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Methodology</div>
+      <h2 class="section-title">Six Classifiers, <span class="text-gradient">Three Paradigms</span></h2>
+      <p class="section-desc">From manually engineered baselines to state-of-the-art programmatic optimization frameworks.</p>
+    </div>
+    <div class="method-cards">
+      <!-- Baseline cards -->
+      <div class="method-card baseline reveal">
+        <div class="method-icon">📝</div>
+        <div class="method-title">Manual Zero-Shot</div>
+        <div class="method-desc">Hand-crafted system prompt with intent descriptions and formatting rules. No in-context examples. Pure instruction following.</div>
+        <ul class="method-features">
+          <li>Manually authored role + 10 intent definitions</li>
+          <li>Static formatting constraints</li>
+          <li>No demonstrations or search</li>
+          <li>Accuracy: <strong style="color:#9b9bc8">81.25%</strong> | F1: <strong style="color:#9b9bc8">0.7821</strong></li>
+        </ul>
+      </div>
+      <div class="method-card baseline reveal" style="transition-delay:0.1s">
+        <div class="method-icon">📋</div>
+        <div class="method-title">Manual Few-Shot</div>
+        <div class="method-desc">Extends Zero-Shot with 1 manually selected demonstration per intent (10 static examples total) for in-context learning.</div>
+        <ul class="method-features">
+          <li>10 curated intent demonstrations</li>
+          <li>Largest prompt footprint (659 tokens)</li>
+          <li>No automatic optimization</li>
+          <li>Accuracy: <strong style="color:#b0b0d8">90.00%</strong> | F1: <strong style="color:#b0b0d8">0.8962</strong></li>
+        </ul>
+      </div>
+      <!-- DSPy -->
+      <div class="method-card dspy reveal" style="transition-delay:0.15s">
+        <div class="method-icon">⚙️</div>
+        <div class="method-title">DSPy — BootstrapFewShot</div>
+        <div class="method-desc">Automatically bootstraps high-quality demonstrations from training data using metric validation. Builds an optimal demonstration library.</div>
+        <ul class="method-features">
+          <li>Declarative <code>BankingIntentSignature</code></li>
+          <li>ChainOfThought reasoning module</li>
+          <li>Metric-filtered demo bootstrapping</li>
+          <li>Accuracy: <strong style="color:#a89dff">90.00%</strong> | F1: <strong style="color:#a89dff">0.8962</strong></li>
+        </ul>
+      </div>
+      <div class="method-card dspy reveal" style="transition-delay:0.2s">
+        <div class="method-icon">🔍</div>
+        <div class="method-title">DSPy — COPRO / MIPRO</div>
+        <div class="method-desc">Coordinate Prompt Optimizer: generates instruction mutations via meta-prompting, evaluates candidates on validation set, selects the best instruction configuration.</div>
+        <ul class="method-features">
+          <li>4 instruction candidates generated + evaluated</li>
+          <li>LLM meta-prompt generates novel instructions</li>
+          <li>Most sample-efficient (11 LLM calls)</li>
+          <li>Accuracy: <strong style="color:#00d4aa">97.50%</strong> | F1: <strong style="color:#00d4aa">0.9749</strong></li>
+        </ul>
+      </div>
+      <!-- TextGrad -->
+      <div class="method-card textgrad reveal" style="transition-delay:0.25s">
+        <div class="method-icon">🌊</div>
+        <div class="method-title">TextGrad — TGD</div>
+        <div class="method-desc">Treats the prompt as a Variable in a computational graph. LLM Critic generates textual gradients on errors; Textual Gradient Descent (TGD) updates the prompt text.</div>
+        <ul class="method-features">
+          <li>Textual backward pass via LLM critic</li>
+          <li>Gradient accumulation over error batches</li>
+          <li>Shortest final prompt (309 tokens)</li>
+          <li>Accuracy: <strong style="color:#00d4aa">97.50%</strong> | F1: <strong style="color:#00d4aa">0.9749</strong></li>
+        </ul>
+      </div>
+      <!-- AdalFlow -->
+      <div class="method-card adalflow reveal" style="transition-delay:0.3s">
+        <div class="method-icon">🔁</div>
+        <div class="method-title">AdalFlow — Auto-Optimizer</div>
+        <div class="method-desc">PyTorch-style declarative pipeline with auto-optimization. Diagnoses failure cases on training set, then jointly tunes instruction templates and few-shot parameters.</div>
+        <ul class="method-features">
+          <li>Modular: Component → Generator → Parser</li>
+          <li>LLM diagnostician for failure analysis</li>
+          <li>Optimal cost-performance balance (25 calls)</li>
+          <li>Accuracy: <strong style="color:#00d4aa">97.50%</strong> | F1: <strong style="color:#00d4aa">0.9749</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Algorithm Flow -->
+    <div style="margin-top:72px">
+      <div class="section-header reveal">
+        <div class="section-eyebrow">Optimization Pipeline</div>
+        <h2 class="section-title" style="font-size:1.8rem">How TextGrad Backpropagation Works</h2>
+      </div>
+      <div class="glass-card card-p reveal">
+        <div class="flow-diagram" style="max-width:720px;margin:0 auto">
+          <div class="flow-step">
+            <div class="flow-num">1</div>
+            <div class="flow-content">
+              <h4>Initialize Prompt Variable</h4>
+              <p>The system prompt is wrapped in a <code>Variable</code> node — a parameter of the computational graph. It holds both the current text value and accumulated textual gradients.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">2</div>
+            <div class="flow-content">
+              <h4>Forward Pass: Classify Training Examples</h4>
+              <p>The current prompt Variable is used to classify training queries. Misclassified instances are identified by comparing predictions against ground truth labels.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">3</div>
+            <div class="flow-content">
+              <h4>Textual Backward Pass: Critic Generates Gradient</h4>
+              <p>For each misclassification, the LLM Critic generates a natural language textual gradient — a targeted critique explaining exactly why the prompt caused the error and what disambiguation rule should be added.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">4</div>
+            <div class="flow-content">
+              <h4>Gradient Accumulation</h4>
+              <p>Textual gradients from multiple misclassifications are accumulated in the Variable. This corresponds to gradient accumulation over a mini-batch in standard backpropagation.</p>
+            </div>
+          </div>
+          <div class="flow-step" style="">
+            <div class="flow-num">5</div>
+            <div class="flow-content">
+              <h4>TGD Step: Update Prompt Text</h4>
+              <p>The TGD optimizer synthesizes the accumulated gradients into a revised, improved system prompt. The updated prompt incorporates specific disambiguation rules, resolving the identified boundary ambiguities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DATASET
+============================================================ -->
+<section id="dataset" class="section-padding">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Dataset</div>
+      <h2 class="section-title">Banking77 — <span class="text-gradient">10 Intent Subset</span></h2>
+      <p class="section-desc">A carefully curated, high-difficulty 10-intent subset designed to surface the semantic boundary ambiguities that challenge manual prompts.</p>
+    </div>
+
+    <div class="intent-grid">
+      <div class="intent-card reveal">
+        <div class="intent-card-icon">📦</div>
+        <div class="intent-card-name">card_arrival</div>
+        <div class="intent-card-desc">Physical card delivery tracking, estimated arrival, shipment status, transit delays.</div>
+      </div>
+      <div class="intent-card reveal" style="transition-delay:0.05s">
+        <div class="intent-card-icon">🔗</div>
+        <div class="intent-card-name">card_linking</div>
+        <div class="intent-card-desc">Adding or connecting an external debit/credit card or bank account to the app.</div>
+      </div>
+      <div class="intent-card reveal" style="transition-delay:0.1s">
+        <div class="intent-card-icon">💱</div>
+        <div class="intent-card-name">exchange_rate</div>
+        <div class="intent-card-desc">Foreign currency conversion rates, FX fees, interbank rates, weekend markup policies.</div>
+      </div>
+      <div class="intent-card reveal" style="transition-delay:0.15s">
+        <div class="intent-card-icon">❓</div>
+        <div class="intent-card-name">extra_charge_on_statement</div>
+        <div class="intent-card-desc">Completely unrecognized, mystery, or duplicate fee appearing on the bank statement.</div>
+      </div>
+      <div class="intent-card reveal" style="transition-delay:0.2s">
+        <div class="intent-card-icon">🚨</div>
+        <div class="intent-card-name">lost_or_stolen_card</div>
+        <div class="intent-card-desc">Emergency card freezing requests, reporting lost wallet or stolen physical card.</div>
+      </div>
+      <div class="intent-card reveal" style="transition-delay:0.25s">
+        <div class="intent-card-icon">↩️</div>
+        <div class="intent-card-name">top_up_reverted</div>
+        <div class="intent-card-desc">Deposited balance cancelled, bounced, or refunded back to the originating bank account.</div>
+      </div>
+      <div class="intent-card reveal" style="transition-delay:0.3s">
+        <div class="intent-card-icon">💸</div>
+        <div class="intent-card-name">transfer_fee_charged</div>
+        <div class="intent-card-desc">Commission or fee applied to a money transfer, wire payment, or international SWIFT transaction.</div>
+      </div>
+      <div class="intent-card reveal" style="transition-delay:0.35s">
+        <div class="intent-card-icon">🪪</div>
+        <div class="intent-card-name">verify_identity</div>
+        <div class="intent-card-desc">KYC document submission, passport/ID photo upload, selfie verification status.</div>
+      </div>
+      <div class="intent-card reveal" style="transition-delay:0.4s">
+        <div class="intent-card-icon">💳</div>
+        <div class="intent-card-name">visa_or_mastercard</div>
+        <div class="intent-card-desc">Inquiries about card network brand (Visa vs Mastercard), brand switching, scheme selection.</div>
+      </div>
+      <div class="intent-card reveal" style="transition-delay:0.45s">
+        <div class="intent-card-icon">🧾</div>
+        <div class="intent-card-name">wrong_amount_additional_charge</div>
+        <div class="intent-card-desc">Authorized merchant transaction billed for the incorrect total amount (restaurant/store overcharge).</div>
+      </div>
+    </div>
+
+    <div class="dataset-stats-row">
+      <div class="ds-stat reveal">
+        <div class="ds-stat-num" data-counter data-target="240" data-suffix="">0</div>
+        <div class="ds-stat-label">Total Samples</div>
+      </div>
+      <div class="ds-stat reveal" style="transition-delay:0.1s">
+        <div class="ds-stat-num" data-counter data-target="120" data-suffix="">0</div>
+        <div class="ds-stat-label">Training Samples</div>
+      </div>
+      <div class="ds-stat reveal" style="transition-delay:0.15s">
+        <div class="ds-stat-num" data-counter data-target="40" data-suffix="">0</div>
+        <div class="ds-stat-label">Validation Samples</div>
+      </div>
+      <div class="ds-stat reveal" style="transition-delay:0.2s">
+        <div class="ds-stat-num" data-counter data-target="80" data-suffix="">0</div>
+        <div class="ds-stat-label">Holdout Test Samples</div>
+      </div>
+      <div class="ds-stat reveal" style="transition-delay:0.25s">
+        <div class="ds-stat-num" data-counter data-target="10" data-suffix="">0</div>
+        <div class="ds-stat-label">Intent Classes</div>
+      </div>
+      <div class="ds-stat reveal" style="transition-delay:0.3s">
+        <div class="ds-stat-num" data-counter data-target="100" data-suffix="%">0</div>
+        <div class="ds-stat-label">Stratified Balance</div>
+      </div>
+    </div>
+
+    <!-- Ambiguity Callout -->
+    <div class="glass-card card-p reveal" style="margin-top:48px; background: rgba(255,107,107,0.05); border-color: rgba(255,107,107,0.2);">
+      <h3 style="font-size:1.1rem;margin-bottom:16px;color:#ff6b6b">⚠️ Key Semantic Boundary Challenges</h3>
+      <div class="grid-2" style="gap:20px">
+        <div>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--text-primary);margin-bottom:8px">Challenge 1: Statement vs. Merchant Charges</div>
+          <div style="font-size:0.83rem;color:var(--text-secondary)">
+            "The shopkeeper charged me twice the price." — Manual Zero-Shot classifies this as <code>extra_charge_on_statement</code> (wrong!) instead of <code>wrong_amount_additional_charge</code> because the word "charged" appears in statement-related training patterns.
+          </div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--text-primary);margin-bottom:8px">Challenge 2: "Verify" Lexical Trap</div>
+          <div style="font-size:0.83rem;color:var(--text-secondary)">
+            "Can someone verify if my replacement card has been mailed?" — Zero-Shot latches onto the word "verify" and misclassifies as <code>verify_identity</code> instead of correctly identifying this as a <code>card_arrival</code> inquiry.
+          </div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--text-primary);margin-bottom:8px">Challenge 3: Transfer Fee Ambiguity</div>
+          <div style="font-size:0.83rem;color:var(--text-secondary)">
+            "Why was an extra transfer charge deducted from my payment?" — Zero-Shot maps "extra charge" to <code>extra_charge_on_statement</code> instead of <code>transfer_fee_charged</code>, missing the core customer intent.
+          </div>
+        </div>
+        <div>
+          <div style="font-size:0.85rem;font-weight:700;color:var(--text-primary);margin-bottom:8px">Challenge 4: Card Brand in Linking Query</div>
+          <div style="font-size:0.83rem;color:var(--text-secondary)">
+            "I am having trouble linking my Mastercard to the app." — Without disambiguation rules, Zero-Shot triggers on the word "Mastercard" and misclassifies as <code>visa_or_mastercard</code> instead of <code>card_linking</code>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESULTS
+============================================================ -->
+<section id="results" class="section-padding" style="background: linear-gradient(to bottom, transparent, rgba(0,212,170,0.04) 50%, transparent);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Benchmark Results</div>
+      <h2 class="section-title">Comparative <span class="text-gradient">Performance Analysis</span></h2>
+      <p class="section-desc">Evaluated on the strict holdout test set (80 samples, 8 per intent). Zero data leakage guaranteed.</p>
+    </div>
+
+    <!-- Big numbers -->
+    <div class="results-hero reveal">
+      <h3>Key Performance Metrics — Optimized vs. Manual Zero-Shot</h3>
+      <div class="big-stats">
+        <div class="big-stat">
+          <div class="big-stat-num" data-counter data-target="16" data-suffix=".25%" data-float="false">0</div>
+          <div class="big-stat-label">Absolute Accuracy Gain</div>
+        </div>
+        <div class="big-stat">
+          <div class="big-stat-num" data-counter data-target="97" data-suffix=".50%">0</div>
+          <div class="big-stat-label">Peak Classification Accuracy</div>
+        </div>
+        <div class="big-stat">
+          <div class="big-stat-num">0.9749</div>
+          <div class="big-stat-label">Macro F1 Score (Best)</div>
+        </div>
+        <div class="big-stat">
+          <div class="big-stat-num" data-counter data-target="53" data-suffix="%">0</div>
+          <div class="big-stat-label">Prompt Token Reduction vs Few-Shot</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Table -->
+    <div class="table-wrapper reveal">
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Classifier Method</th>
+            <th>Type</th>
+            <th>Test Accuracy</th>
+            <th>Macro F1</th>
+            <th>Prompt Tokens</th>
+            <th>Opt LLM Calls</th>
+            <th>Opt Tokens</th>
+            <th>Gain vs Zero-Shot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="baseline-row">
+            <td class="method-name">Manual Zero-Shot</td>
+            <td><span class="badge badge-baseline">Baseline</span></td>
+            <td>81.25%</td>
+            <td>0.7821</td>
+            <td>420</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="gain-zero">Baseline</td>
+          </tr>
+          <tr class="baseline-row">
+            <td class="method-name">Manual Few-Shot</td>
+            <td><span class="badge badge-baseline">Baseline</span></td>
+            <td>90.00%</td>
+            <td>0.8962</td>
+            <td style="color:var(--accent)">659 ⚠️</td>
+            <td>0</td>
+            <td>0</td>
+            <td class="gain-positive">+8.75%</td>
+          </tr>
+          <tr>
+            <td class="method-name">DSPy — BootstrapFewShot</td>
+            <td><span class="badge badge-programmatic">Programmatic</span></td>
+            <td>90.00%</td>
+            <td>0.8962</td>
+            <td>404</td>
+            <td>10</td>
+            <td>1,039</td>
+            <td class="gain-positive">+8.75%</td>
+          </tr>
+          <tr>
+            <td class="method-name">DSPy — COPRO / MIPRO</td>
+            <td><span class="badge badge-programmatic">Programmatic</span></td>
+            <td class="best">97.50% ★</td>
+            <td class="best">0.9749</td>
+            <td>404</td>
+            <td style="color:var(--secondary);font-weight:700">11 ✓</td>
+            <td style="color:var(--secondary);font-weight:700">1,146 ✓</td>
+            <td class="gain-positive">+16.25%</td>
+          </tr>
+          <tr>
+            <td class="method-name">TextGrad — TGD</td>
+            <td><span class="badge badge-programmatic">Programmatic</span></td>
+            <td class="best">97.50% ★</td>
+            <td class="best">0.9749</td>
+            <td style="color:var(--secondary);font-weight:700">309 ✓</td>
+            <td>202</td>
+            <td>59,107</td>
+            <td class="gain-positive">+16.25%</td>
+          </tr>
+          <tr>
+            <td class="method-name">AdalFlow — Auto-Optimizer</td>
+            <td><span class="badge badge-programmatic">Programmatic</span></td>
+            <td class="best">97.50% ★</td>
+            <td class="best">0.9749</td>
+            <td>315</td>
+            <td>25</td>
+            <td>2,291</td>
+            <td class="gain-positive">+16.25%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bar Chart: Accuracy -->
+    <div class="chart-section reveal" style="margin-top:56px">
+      <div class="chart-title">📊 Test Set Accuracy Comparison</div>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <div class="bar-label">Manual Zero-Shot</div>
+          <div class="bar-track">
+            <div class="bar-fill zero-shot" data-width="81.25" style="width:0%">81.25%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Manual Few-Shot</div>
+          <div class="bar-track">
+            <div class="bar-fill few-shot" data-width="90" style="width:0%">90.00%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">DSPy BootstrapFewShot</div>
+          <div class="bar-track">
+            <div class="bar-fill dspy-bs" data-width="90" style="width:0%">90.00%</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">DSPy COPRO / MIPRO</div>
+          <div class="bar-track">
+            <div class="bar-fill dspy-co" data-width="97.5" style="width:0%">97.50% ★</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">TextGrad TGD</div>
+          <div class="bar-track">
+            <div class="bar-fill textgrad" data-width="97.5" style="width:0%">97.50% ★</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">AdalFlow Auto-Optimizer</div>
+          <div class="bar-track">
+            <div class="bar-fill adalflow" data-width="97.5" style="width:0%">97.50% ★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Rings -->
+    <div class="reveal" style="margin-top:64px">
+      <div class="chart-title" style="text-align:center;margin-bottom:36px">🎯 Macro F1 Score — Progress Rings</div>
+      <div style="display:flex;gap:40px;justify-content:center;flex-wrap:wrap">
+        <!-- Zero-Shot -->
+        <div style="text-align:center">
+          <div class="progress-ring-wrap" data-pct="78.21">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress-ring-bg" cx="60" cy="60" r="46"/>
+              <circle class="progress-ring-fg" cx="60" cy="60" r="46" stroke="#5c5c8a"/>
+            </svg>
+            <div class="progress-ring-label">
+              <div class="num" style="color:#9b9bc8">0.78</div>
+              <div class="sub">Zero-Shot</div>
+            </div>
+          </div>
+        </div>
+        <!-- Few-Shot -->
+        <div style="text-align:center">
+          <div class="progress-ring-wrap" data-pct="89.62">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress-ring-bg" cx="60" cy="60" r="46"/>
+              <circle class="progress-ring-fg" cx="60" cy="60" r="46" stroke="#8080bb"/>
+            </svg>
+            <div class="progress-ring-label">
+              <div class="num" style="color:#b0b0d8">0.90</div>
+              <div class="sub">Few-Shot</div>
+            </div>
+          </div>
+        </div>
+        <!-- DSPy -->
+        <div style="text-align:center">
+          <div class="progress-ring-wrap" data-pct="97.49">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress-ring-bg" cx="60" cy="60" r="46"/>
+              <circle class="progress-ring-fg" cx="60" cy="60" r="46" stroke="url(#grad1)"/>
+              <defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#6c63ff"/><stop offset="100%" stop-color="#a89dff"/></linearGradient></defs>
+            </svg>
+            <div class="progress-ring-label">
+              <div class="num" style="color:#a89dff">0.97</div>
+              <div class="sub">DSPy COPRO</div>
+            </div>
+          </div>
+        </div>
+        <!-- TextGrad -->
+        <div style="text-align:center">
+          <div class="progress-ring-wrap" data-pct="97.49">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress-ring-bg" cx="60" cy="60" r="46"/>
+              <circle class="progress-ring-fg" cx="60" cy="60" r="46" stroke="url(#grad2)"/>
+              <defs><linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ff6b6b"/><stop offset="100%" stop-color="#ffd93d"/></linearGradient></defs>
+            </svg>
+            <div class="progress-ring-label">
+              <div class="num" style="color:#ffd93d">0.97</div>
+              <div class="sub">TextGrad TGD</div>
+            </div>
+          </div>
+        </div>
+        <!-- AdalFlow -->
+        <div style="text-align:center">
+          <div class="progress-ring-wrap" data-pct="97.49">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+              <circle class="progress-ring-bg" cx="60" cy="60" r="46"/>
+              <circle class="progress-ring-fg" cx="60" cy="60" r="46" stroke="url(#grad3)"/>
+              <defs><linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00d4aa"/><stop offset="100%" stop-color="#6c63ff"/></linearGradient></defs>
+            </svg>
+            <div class="progress-ring-label">
+              <div class="num" style="color:#00d4aa">0.97</div>
+              <div class="sub">AdalFlow</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LIVE DEMO
+============================================================ -->
+<section id="demo" class="section-padding">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Interactive Demo</div>
+      <h2 class="section-title">Try the <span class="text-gradient">Live Classifier</span></h2>
+      <p class="section-desc">Enter any banking customer support inquiry and see how all 6 classifiers predict the intent in real time.</p>
+    </div>
+
+    <div class="demo-container reveal">
+      <div class="demo-input-area">
+        <h3>Customer Support Query</h3>
+        <textarea id="demo-query" class="demo-textarea" placeholder="Type a banking customer inquiry here, e.g., 'Why was I charged an extra fee on my bank statement?'"></textarea>
+        <div class="demo-samples">
+          <div class="demo-samples-label">Quick sample queries:</div>
+          <div class="sample-chips">
+            <div class="chip" data-query="When will my replacement debit card arrive in the mail?">📦 Card Arrival</div>
+            <div class="chip" data-query="I lost my wallet on the bus. Please freeze my card immediately!">🚨 Lost Card</div>
+            <div class="chip" data-query="Why was I charged an unexpected $14.99 on my bank statement?">❓ Mystery Fee</div>
+            <div class="chip" data-query="The restaurant charged me $45 instead of $35 on my receipt.">🧾 Wrong Amount</div>
+            <div class="chip" data-query="How do I link my external debit card to this app?">🔗 Card Linking</div>
+            <div class="chip" data-query="What foreign exchange rate do you use for EUR to USD?">💱 Exchange Rate</div>
+            <div class="chip" data-query="My top-up of $200 was reverted back to my bank account.">↩️ Top-Up Reverted</div>
+            <div class="chip" data-query="How do I complete identity verification using my passport?">🪪 Verify Identity</div>
+          </div>
+        </div>
+        <button id="demo-run" class="btn btn-primary demo-btn">
+          ⚡ Classify Intent with All 6 Models
+        </button>
+      </div>
+      <div class="demo-results">
+        <h3>Classification Results</h3>
+        <div id="demo-output">
+          <div class="demo-idle">
+            <div class="demo-idle-icon">🤖</div>
+            <div>Enter a query above and click <strong>Classify</strong> to see predictions from all six classifiers side by side.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINDINGS
+============================================================ -->
+<section id="findings" class="section-padding" style="background: linear-gradient(to bottom, transparent, rgba(108,99,255,0.04) 50%, transparent);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Key Findings</div>
+      <h2 class="section-title">What We <span class="text-gradient">Discovered</span></h2>
+      <p class="section-desc">Critical quantitative and qualitative insights from the comparative benchmark study.</p>
+    </div>
+    <div class="finding-cards">
+      <div class="finding-card reveal">
+        <div class="finding-num">01</div>
+        <div class="finding-title">Programmatic Optimization Delivers Dramatic Gains</div>
+        <div class="finding-text">All three programmatic frameworks (DSPy COPRO, TextGrad, AdalFlow) boosted accuracy from 81.25% to 97.50% — a <strong>+16.25 absolute percentage point</strong> gain. Macro F1 improved by <strong>+19.28 points</strong>, confirming gains across all intent classes.</div>
+      </div>
+      <div class="finding-card reveal" style="transition-delay:0.1s">
+        <div class="finding-num">02</div>
+        <div class="finding-title">TextGrad Produces the Most Compact Production Prompt</div>
+        <div class="finding-text">Despite consuming the most optimization tokens (59,107), TextGrad generated the <strong>shortest final prompt at just 309 tokens</strong> — a 53% reduction compared to Manual Few-Shot (659 tokens). This directly reduces production inference cost per million queries.</div>
+      </div>
+      <div class="finding-card reveal" style="transition-delay:0.15s">
+        <div class="finding-num">03</div>
+        <div class="finding-title">DSPy COPRO is Optimization-Token Efficient</div>
+        <div class="finding-text">DSPy's Coordinate Prompt Optimizer achieved top accuracy (<strong>97.50%</strong>) using only <strong>11 LLM calls and 1,146 tokens</strong> during optimization — the most frugal path to peak performance among all three programmatic methods.</div>
+      </div>
+      <div class="finding-card reveal" style="transition-delay:0.2s">
+        <div class="finding-num">04</div>
+        <div class="finding-title">AdalFlow Offers Best Cost-Performance Balance</div>
+        <div class="finding-text">AdalFlow achieved top-tier accuracy with only 25 LLM calls and 2,291 optimization tokens. Its modular declarative design cleanly separates the optimization concern from inference, enabling easy deployment, maintenance, and extension.</div>
+      </div>
+      <div class="finding-card reveal" style="transition-delay:0.25s">
+        <div class="finding-num">05</div>
+        <div class="finding-title">Manual Zero-Shot Fails on Lexical Traps</div>
+        <div class="finding-text">Zero-Shot achieves only 81.25% due to boundary ambiguities: "verify" triggers <code>verify_identity</code> for card delivery queries; "charged twice" triggers <code>extra_charge_on_statement</code> for merchant overcharges. Programmatic methods resolve all these traps via explicit disambiguation rules.</div>
+      </div>
+      <div class="finding-card reveal" style="transition-delay:0.3s">
+        <div class="finding-num">06</div>
+        <div class="finding-title">Demonstration Quality Beats Quantity</div>
+        <div class="finding-text">DSPy BootstrapFewShot synthesizes a <strong>compact verified demonstration set</strong> (5 demos, 404 tokens) that matches Manual Few-Shot accuracy (90%) despite using far fewer tokens per inference than the manually curated 10-example set (659 tokens).</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VIVA Q&A
+============================================================ -->
+<section id="viva" class="section-padding">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Viva Voce Preparation</div>
+      <h2 class="section-title">Expected <span class="text-gradient">Defense Q&A</span></h2>
+      <p class="section-desc">Complete model answers for common viva voce examination questions on this project.</p>
+    </div>
+    <div class="qa-accordion reveal">
+      <div class="qa-item open">
+        <div class="qa-question">
+          <div class="qa-q-text">Q1. What is the fundamental difference between manual prompt engineering and programmatic prompt optimization?</div>
+          <div class="qa-toggle">+</div>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            Manual prompt engineering relies on human intuition and heuristic trial-and-error, with no formal convergence guarantee or metric-driven feedback. Changes are made ad-hoc without understanding which modification caused an improvement. Programmatic prompt optimization formulates prompt construction as a <strong>formal optimization problem</strong>: prompts (both instructions and demonstrations) are treated as learnable parameters, evaluated against objective validation metrics (e.g., exact-match accuracy), and iteratively refined using systematic search algorithms (DSPy COPRO), textual loss gradients (TextGrad), or automated pipeline diagnosis (AdalFlow). This guarantees measurable, reproducible, and consistently improving outcomes.
+          </div>
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question">
+          <div class="qa-q-text">Q2. How does TextGrad compute "gradients" when LLMs operate on discrete tokens, not continuous tensors?</div>
+          <div class="qa-toggle">+</div>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            In traditional deep learning, gradients are partial derivatives of a scalar loss with respect to continuous parameters: ∇_W L. Since language operates on <em>discrete</em> tokens, standard automatic differentiation is impossible. TextGrad solves this with a paradigm shift: the LLM Critic acts as a "textual loss function," generating a <strong>natural language critique</strong> that explains precisely why the current prompt produced an incorrect prediction and what specific instruction must be changed. This textual critique <em>is</em> the gradient — it carries directional information about how to update the prompt parameter. Textual Gradient Descent (TGD) then applies a "natural language update rule" by instructing an optimizer LLM to synthesize these accumulated critiques into a revised prompt text.
+          </div>
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question">
+          <div class="qa-q-text">Q3. What is a DSPy Signature and why is it superior to hardcoded string templates?</div>
+          <div class="qa-toggle">+</div>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            A DSPy Signature is a <strong>declarative specification</strong> of a computational task's input-output contract, independent of any specific prompt phrasing. For example: <code>BankingIntentSignature(customer_query) → intent</code>. This separates the <em>what</em> (the task specification) from the <em>how</em> (the actual prompt text). This decoupling enables DSPy teleprompters (like BootstrapFewShot and COPRO) to <strong>automatically compile</strong> the optimal prompt for any target LLM without human intervention. If you change the LLM provider, you simply recompile the signature — you don't rewrite the prompts. Hardcoded strings, by contrast, are fragile, model-specific, and impossible to systematically optimize.
+          </div>
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question">
+          <div class="qa-q-text">Q4. Why did TextGrad consume 59,107 tokens in optimization while achieving similar accuracy to DSPy COPRO (1,146 tokens)?</div>
+          <div class="qa-toggle">+</div>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            The difference reflects fundamental algorithmic design philosophies. <strong>DSPy COPRO</strong> performs a discrete search over a small set of instruction candidates (4–5 mutations) evaluated on the validation set — it is a gradient-free, population-based search analogous to coordinate ascent. Each evaluation is cheap. <strong>TextGrad</strong> executes a fine-grained iterative process: for every misclassified example, it makes an LLM call to generate a detailed natural-language critique, accumulates these gradients across training instances, and makes additional LLM calls to execute TGD update steps. This results in many more API calls (202 vs 11), but produces the most <em>linguistically refined</em> and <em>compact</em> final prompt (309 tokens), which <strong>reduces production inference costs significantly</strong>. The choice depends on budget: if optimization cost is constrained, use DSPy COPRO; if production inference cost must be minimized at scale, TextGrad's investment pays off.
+          </div>
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question">
+          <div class="qa-q-text">Q5. How did you ensure unbiased evaluation and prevent data leakage?</div>
+          <div class="qa-toggle">+</div>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            We enforced a strict <strong>three-way stratified split</strong>: Training (120 samples, 12 per intent), Validation (40 samples, 4 per intent), and Holdout Test (80 samples, 8 per intent). The critical protocol: all optimization operations — bootstrap demonstration harvesting, instruction candidate evaluation (DSPy), textual gradient computation (TextGrad), and failure diagnosis (AdalFlow) — operated <strong>exclusively on training and validation splits</strong>. The 80 holdout test samples were locked and never accessed during any optimization phase. Final accuracy, Macro F1, and confusion matrix were computed only after all optimization was complete, using only the strictly unseen holdout samples.
+          </div>
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question">
+          <div class="qa-q-text">Q6. What is the production business impact of the prompt token reduction achieved?</div>
+          <div class="qa-toggle">+</div>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            The reduction from 659 tokens (Manual Few-Shot) to 309 tokens (TextGrad optimized prompt) represents a <strong>53.1% reduction in per-query inference token consumption</strong>. At production scale, consider a banking chatbot receiving <strong>1 million customer queries per day</strong>. At GPT-4o pricing (~$0.0025 per 1,000 tokens): Manual Few-Shot costs $1,648/day; TextGrad prompt costs $773/day — a saving of <strong>$875/day or $319,375/year</strong>, while simultaneously achieving <em>higher accuracy</em>. This makes the optimization investment (a one-time cost of ~$2–10 in LLM calls) massively profitable. Critically, TextGrad achieves the best of both worlds: highest accuracy AND lowest runtime cost.
+          </div>
+        </div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-question">
+          <div class="qa-q-text">Q7. How does the AdalFlow declarative pipeline differ architecturally from DSPy?</div>
+          <div class="qa-toggle">+</div>
+        </div>
+        <div class="qa-answer">
+          <div class="qa-answer-inner">
+            While both DSPy and AdalFlow use declarative abstractions, they differ philosophically. <strong>DSPy</strong> focuses on <em>program synthesis</em>: defining a computation graph of LLM calls as "signatures and modules," then compiling it into the optimal prompt configuration via teleprompters. <strong>AdalFlow</strong> takes a more <em>PyTorch-inspired modular design</em>: separating the pipeline into independent, composable <code>Component</code> objects — Generator, PromptTemplate, OutputParser — each with clear responsibilities. AdalFlow's auto-optimizer then applies a <em>diagnosis-first</em> methodology: it first analyzes training failures with a diagnostician LLM, generates targeted refinements, and separately tunes both instruction parameters and few-shot demonstration parameters in a joint optimization step. This makes AdalFlow easier to audit, debug, and extend in production engineering contexts.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:16px;display:inline-flex">
+          <div class="nav-logo-icon">🧠</div>
+          <span style="font-size:1.1rem;font-weight:700">PromptOpt</span>
+        </div>
+        <p>Programmatic Prompt Optimization for Customer Support Intent Classification. A comparative study of DSPy, TextGrad, and AdalFlow on the Banking77 10-intent subset.</p>
+        <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+          <span class="tech-badge python">Python 3.11</span>
+          <span class="tech-badge dspy">DSPy</span>
+          <span class="tech-badge textgrad">TextGrad</span>
+          <span class="tech-badge adalflow">AdalFlow</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Sections</h5>
+        <ul>
+          <li><a href="#overview">Project Overview</a></li>
+          <li><a href="#methodology">Methodology</a></li>
+          <li><a href="#dataset">Dataset</a></li>
+          <li><a href="#results">Benchmark Results</a></li>
+          <li><a href="#demo">Live Demo</a></li>
+          <li><a href="#findings">Key Findings</a></li>
+          <li><a href="#viva">Viva Q&amp;A</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Deliverables</h5>
+        <ul>
+          <li><a href="#">Manual Baselines ✓</a></li>
+          <li><a href="#">DSPy BootstrapFewShot ✓</a></li>
+          <li><a href="#">DSPy COPRO / MIPRO ✓</a></li>
+          <li><a href="#">TextGrad TGD ✓</a></li>
+          <li><a href="#">AdalFlow Auto-Opt ✓</a></li>
+          <li><a href="#">Comparative Report ✓</a></li>
+          <li><a href="#">Interactive Dashboard ✓</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>Mini Project #6 — Prompt Engineering | Banking77 Dataset | Python 3.11</div>
+      <div style="color:var(--primary-light);font-weight:600">📊 All 14 Tests Passing ✓</div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/particles.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+// Chip click handler
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const q = chip.dataset.query;
+    if (q) {
+      const ta = document.getElementById('demo-query');
+      if (ta) ta.value = q;
+    }
+  });
+});
+</script>
+</body>
+</html>

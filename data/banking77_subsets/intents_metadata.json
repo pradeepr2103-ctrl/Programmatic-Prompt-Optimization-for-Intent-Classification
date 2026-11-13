@@ -1,0 +1,52 @@
+{
+  "card_arrival": {
+    "name": "card_arrival",
+    "description": "Customer inquiry about when their physical debit/credit card will arrive, delivery tracking, or delays in card shipment.",
+    "keywords": ["arrive", "delivered", "card shipment", "delivery date", "tracking number", "waiting for card", "new card arrive"]
+  },
+  "card_linking": {
+    "name": "card_linking",
+    "description": "Questions regarding connecting or linking an external bank card, credit card, or payment method to the account.",
+    "keywords": ["link card", "connect card", "add card", "attach card", "link my bank card", "sync card"]
+  },
+  "exchange_rate": {
+    "name": "exchange_rate",
+    "description": "Questions about foreign currency exchange rates, conversion fees, weekend markup, or how exchange rates are calculated.",
+    "keywords": ["exchange rate", "currency conversion", "fx rate", "convert eur to usd", "foreign exchange", "forex fee"]
+  },
+  "extra_charge_on_statement": {
+    "name": "extra_charge_on_statement",
+    "description": "Customer notices an unexpected extra charge, duplicate fee, or unexplained deduction on their account statement.",
+    "keywords": ["extra charge", "unrecognized fee", "statement charge", "charged twice", "unknown transaction", "mystery fee"]
+  },
+  "lost_or_stolen_card": {
+    "name": "lost_or_stolen_card",
+    "description": "Urgent notifications that a physical card has been lost, stolen, or compromised, and needs to be frozen or cancelled immediately.",
+    "keywords": ["lost card", "stolen card", "card stolen", "misplaced wallet", "block my card", "freeze card", "card compromised"]
+  },
+  "top_up_reverted": {
+    "name": "top_up_reverted",
+    "description": "Customer added funds or topped up their balance, but the top-up was cancelled, refunded, reversed, or failed to clear.",
+    "keywords": ["top up reverted", "reverted topup", "money bounced back", "top up cancelled", "deposit refunded", "topup failed"]
+  },
+  "transfer_fee_charged": {
+    "name": "transfer_fee_charged",
+    "description": "Customer asks why a fee or commission was applied to a money transfer, wire, or international payment.",
+    "keywords": ["transfer fee", "fee for sending money", "wire fee", "charged for transfer", "transfer commission", "p2p fee"]
+  },
+  "verify_identity": {
+    "name": "verify_identity",
+    "description": "Questions or issues concerning identity verification, KYC, passport/ID submission, selfie check, or verification pending status.",
+    "keywords": ["verify identity", "identity verification", "kyc", "passport upload", "id check", "verification pending", "verify account"]
+  },
+  "visa_or_mastercard": {
+    "name": "visa_or_mastercard",
+    "description": "Inquiries regarding whether the card provided is Visa or Mastercard, network brand differences, or requesting a specific brand.",
+    "keywords": ["visa or mastercard", "is card visa", "is card mastercard", "payment network", "switch to mastercard", "visa debit"]
+  },
+  "wrong_amount_additional_charge": {
+    "name": "wrong_amount_additional_charge",
+    "description": "The customer was charged a different total amount than what the merchant stated or authorized during purchase.",
+    "keywords": ["wrong amount", "charged more than receipt", "overcharged at store", "incorrect total charged", "restaurant overcharge"]
+  }
+}

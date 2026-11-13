@@ -1,0 +1,7 @@
+Method,Category,Accuracy,Macro F1,Macro Precision,Macro Recall,Prompt Tokens,Prompt Chars,Opt LLM Calls,Opt Prompt Tokens,Opt Completion Tokens,Opt Total Tokens,Opt Runtime (s),Test Latency (s)
+Manual Zero-Shot,Baseline,0.8125,0.7821,0.7999,0.8125,420,1890,0,0,0,0,0.00,0.01
+Manual Few-Shot,Baseline,0.9000,0.8962,0.9244,0.9000,659,2945,0,0,0,0,0.00,0.01
+DSPy (BootstrapFewShot),Programmatic Optimizer,0.9000,0.8962,0.9244,0.9000,404,1904,10,1009,30,1039,0.00,0.01
+DSPy (COPRO/MIPRO),Programmatic Optimizer,0.9750,0.9749,0.9778,0.9750,404,1873,11,1057,89,1146,0.02,0.00
+TextGrad (TGD),Programmatic Optimizer,0.9750,0.9749,0.9778,0.9750,309,1439,202,57303,1804,59107,0.01,0.00
+AdalFlow (Auto-Optimizer),Programmatic Optimizer,0.9750,0.9749,0.9778,0.9750,315,1429,25,2241,50,2291,0.00,0.01

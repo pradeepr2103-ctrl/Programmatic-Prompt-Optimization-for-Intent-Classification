@@ -1,0 +1,1334 @@
+{
+  "Manual Zero-Shot": {
+    "method": "Manual Zero-Shot",
+    "category": "Baseline",
+    "accuracy": 0.8125,
+    "macro_f1": 0.7821,
+    "macro_precision": 0.7999,
+    "macro_recall": 0.8125,
+    "prompt_length_chars": 1890,
+    "prompt_length_tokens": 420,
+    "opt_llm_calls": 0,
+    "opt_prompt_tokens": 0,
+    "opt_completion_tokens": 0,
+    "opt_total_tokens": 0,
+    "opt_runtime_sec": 0.0,
+    "test_eval_time_sec": 0.005,
+    "total_calls": 80,
+    "total_tokens": 34342,
+    "metrics": {
+      "accuracy": 0.8125,
+      "macro_precision": 0.7999,
+      "macro_recall": 0.8125,
+      "macro_f1": 0.7821,
+      "weighted_f1": 0.7821,
+      "per_class": {
+        "card_arrival": {
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1_score": 0.8571,
+          "support": 8
+        },
+        "card_linking": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333,
+          "support": 8
+        },
+        "exchange_rate": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "extra_charge_on_statement": {
+          "precision": 0.4211,
+          "recall": 1.0,
+          "f1_score": 0.5926,
+          "support": 8
+        },
+        "lost_or_stolen_card": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "top_up_reverted": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "transfer_fee_charged": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "support": 8
+        },
+        "verify_identity": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1_score": 0.8889,
+          "support": 8
+        },
+        "visa_or_mastercard": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "wrong_amount_additional_charge": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1_score": 0.6667,
+          "support": 8
+        }
+      },
+      "labels": [
+        "card_arrival",
+        "card_linking",
+        "exchange_rate",
+        "extra_charge_on_statement",
+        "lost_or_stolen_card",
+        "top_up_reverted",
+        "transfer_fee_charged",
+        "verify_identity",
+        "visa_or_mastercard",
+        "wrong_amount_additional_charge"
+      ],
+      "confusion_matrix": [
+        [
+          6,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ]
+      ],
+      "total_samples": 80
+    }
+  },
+  "Manual Few-Shot": {
+    "method": "Manual Few-Shot",
+    "category": "Baseline",
+    "accuracy": 0.9,
+    "macro_f1": 0.8962,
+    "macro_precision": 0.9244,
+    "macro_recall": 0.9,
+    "prompt_length_chars": 2945,
+    "prompt_length_tokens": 659,
+    "opt_llm_calls": 0,
+    "opt_prompt_tokens": 0,
+    "opt_completion_tokens": 0,
+    "opt_total_tokens": 0,
+    "opt_runtime_sec": 0.0,
+    "test_eval_time_sec": 0.005,
+    "total_calls": 80,
+    "total_tokens": 53501,
+    "metrics": {
+      "accuracy": 0.9,
+      "macro_precision": 0.9244,
+      "macro_recall": 0.9,
+      "macro_f1": 0.8962,
+      "weighted_f1": 0.8962,
+      "per_class": {
+        "card_arrival": {
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1_score": 0.8571,
+          "support": 8
+        },
+        "card_linking": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333,
+          "support": 8
+        },
+        "exchange_rate": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "extra_charge_on_statement": {
+          "precision": 0.6667,
+          "recall": 1.0,
+          "f1_score": 0.8,
+          "support": 8
+        },
+        "lost_or_stolen_card": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "top_up_reverted": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "transfer_fee_charged": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333,
+          "support": 8
+        },
+        "verify_identity": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1_score": 0.8889,
+          "support": 8
+        },
+        "visa_or_mastercard": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "wrong_amount_additional_charge": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1_score": 0.6667,
+          "support": 8
+        }
+      },
+      "labels": [
+        "card_arrival",
+        "card_linking",
+        "exchange_rate",
+        "extra_charge_on_statement",
+        "lost_or_stolen_card",
+        "top_up_reverted",
+        "transfer_fee_charged",
+        "verify_identity",
+        "visa_or_mastercard",
+        "wrong_amount_additional_charge"
+      ],
+      "confusion_matrix": [
+        [
+          6,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ]
+      ],
+      "total_samples": 80
+    }
+  },
+  "DSPy (BootstrapFewShot)": {
+    "method": "DSPy (BootstrapFewShot)",
+    "category": "Programmatic Optimizer",
+    "accuracy": 0.9,
+    "macro_f1": 0.8962,
+    "macro_precision": 0.9244,
+    "macro_recall": 0.9,
+    "prompt_length_chars": 1904,
+    "prompt_length_tokens": 404,
+    "opt_llm_calls": 10,
+    "opt_prompt_tokens": 1009,
+    "opt_completion_tokens": 30,
+    "opt_total_tokens": 1039,
+    "opt_runtime_sec": 0.002,
+    "test_eval_time_sec": 0.005,
+    "total_calls": 10,
+    "total_tokens": 1039,
+    "metrics": {
+      "accuracy": 0.9,
+      "macro_precision": 0.9244,
+      "macro_recall": 0.9,
+      "macro_f1": 0.8962,
+      "weighted_f1": 0.8962,
+      "per_class": {
+        "card_arrival": {
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1_score": 0.8571,
+          "support": 8
+        },
+        "card_linking": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333,
+          "support": 8
+        },
+        "exchange_rate": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "extra_charge_on_statement": {
+          "precision": 0.6667,
+          "recall": 1.0,
+          "f1_score": 0.8,
+          "support": 8
+        },
+        "lost_or_stolen_card": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "top_up_reverted": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "transfer_fee_charged": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333,
+          "support": 8
+        },
+        "verify_identity": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1_score": 0.8889,
+          "support": 8
+        },
+        "visa_or_mastercard": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "wrong_amount_additional_charge": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1_score": 0.6667,
+          "support": 8
+        }
+      },
+      "labels": [
+        "card_arrival",
+        "card_linking",
+        "exchange_rate",
+        "extra_charge_on_statement",
+        "lost_or_stolen_card",
+        "top_up_reverted",
+        "transfer_fee_charged",
+        "verify_identity",
+        "visa_or_mastercard",
+        "wrong_amount_additional_charge"
+      ],
+      "confusion_matrix": [
+        [
+          6,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ]
+      ],
+      "total_samples": 80
+    }
+  },
+  "DSPy (COPRO/MIPRO)": {
+    "method": "DSPy (COPRO/MIPRO)",
+    "category": "Programmatic Optimizer",
+    "accuracy": 0.975,
+    "macro_f1": 0.9749,
+    "macro_precision": 0.9778,
+    "macro_recall": 0.975,
+    "prompt_length_chars": 1873,
+    "prompt_length_tokens": 404,
+    "opt_llm_calls": 11,
+    "opt_prompt_tokens": 1057,
+    "opt_completion_tokens": 89,
+    "opt_total_tokens": 1146,
+    "opt_runtime_sec": 0.02,
+    "test_eval_time_sec": 0.004,
+    "total_calls": 11,
+    "total_tokens": 1146,
+    "metrics": {
+      "accuracy": 0.975,
+      "macro_precision": 0.9778,
+      "macro_recall": 0.975,
+      "macro_f1": 0.9749,
+      "weighted_f1": 0.9749,
+      "per_class": {
+        "card_arrival": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "card_linking": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333,
+          "support": 8
+        },
+        "exchange_rate": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "extra_charge_on_statement": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "lost_or_stolen_card": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "top_up_reverted": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "transfer_fee_charged": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333,
+          "support": 8
+        },
+        "verify_identity": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "visa_or_mastercard": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "wrong_amount_additional_charge": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        }
+      },
+      "labels": [
+        "card_arrival",
+        "card_linking",
+        "exchange_rate",
+        "extra_charge_on_statement",
+        "lost_or_stolen_card",
+        "top_up_reverted",
+        "transfer_fee_charged",
+        "verify_identity",
+        "visa_or_mastercard",
+        "wrong_amount_additional_charge"
+      ],
+      "confusion_matrix": [
+        [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8
+        ]
+      ],
+      "total_samples": 80
+    }
+  },
+  "TextGrad (TGD)": {
+    "method": "TextGrad (TGD)",
+    "category": "Programmatic Optimizer",
+    "accuracy": 0.975,
+    "macro_f1": 0.9749,
+    "macro_precision": 0.9778,
+    "macro_recall": 0.975,
+    "prompt_length_chars": 1439,
+    "prompt_length_tokens": 309,
+    "opt_llm_calls": 202,
+    "opt_prompt_tokens": 57303,
+    "opt_completion_tokens": 1804,
+    "opt_total_tokens": 59107,
+    "opt_runtime_sec": 0.008,
+    "test_eval_time_sec": 0.004,
+    "total_calls": 282,
+    "total_tokens": 84590,
+    "metrics": {
+      "accuracy": 0.975,
+      "macro_precision": 0.9778,
+      "macro_recall": 0.975,
+      "macro_f1": 0.9749,
+      "weighted_f1": 0.9749,
+      "per_class": {
+        "card_arrival": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "card_linking": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333,
+          "support": 8
+        },
+        "exchange_rate": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "extra_charge_on_statement": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "lost_or_stolen_card": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "top_up_reverted": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "transfer_fee_charged": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333,
+          "support": 8
+        },
+        "verify_identity": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "visa_or_mastercard": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "wrong_amount_additional_charge": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        }
+      },
+      "labels": [
+        "card_arrival",
+        "card_linking",
+        "exchange_rate",
+        "extra_charge_on_statement",
+        "lost_or_stolen_card",
+        "top_up_reverted",
+        "transfer_fee_charged",
+        "verify_identity",
+        "visa_or_mastercard",
+        "wrong_amount_additional_charge"
+      ],
+      "confusion_matrix": [
+        [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8
+        ]
+      ],
+      "total_samples": 80
+    }
+  },
+  "AdalFlow (Auto-Optimizer)": {
+    "method": "AdalFlow (Auto-Optimizer)",
+    "category": "Programmatic Optimizer",
+    "accuracy": 0.975,
+    "macro_f1": 0.9749,
+    "macro_precision": 0.9778,
+    "macro_recall": 0.975,
+    "prompt_length_chars": 1429,
+    "prompt_length_tokens": 315,
+    "opt_llm_calls": 25,
+    "opt_prompt_tokens": 2241,
+    "opt_completion_tokens": 50,
+    "opt_total_tokens": 2291,
+    "opt_runtime_sec": 0.001,
+    "test_eval_time_sec": 0.006,
+    "total_calls": 105,
+    "total_tokens": 28237,
+    "metrics": {
+      "accuracy": 0.975,
+      "macro_precision": 0.9778,
+      "macro_recall": 0.975,
+      "macro_f1": 0.9749,
+      "weighted_f1": 0.9749,
+      "per_class": {
+        "card_arrival": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "card_linking": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333,
+          "support": 8
+        },
+        "exchange_rate": {
+          "precision": 0.8889,
+          "recall": 1.0,
+          "f1_score": 0.9412,
+          "support": 8
+        },
+        "extra_charge_on_statement": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "lost_or_stolen_card": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "top_up_reverted": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "transfer_fee_charged": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333,
+          "support": 8
+        },
+        "verify_identity": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "visa_or_mastercard": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        },
+        "wrong_amount_additional_charge": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 8
+        }
+      },
+      "labels": [
+        "card_arrival",
+        "card_linking",
+        "exchange_rate",
+        "extra_charge_on_statement",
+        "lost_or_stolen_card",
+        "top_up_reverted",
+        "transfer_fee_charged",
+        "verify_identity",
+        "visa_or_mastercard",
+        "wrong_amount_additional_charge"
+      ],
+      "confusion_matrix": [
+        [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8
+        ]
+      ],
+      "total_samples": 80
+    }
+  }
+}

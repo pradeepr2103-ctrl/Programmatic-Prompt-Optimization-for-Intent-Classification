@@ -1,0 +1,1231 @@
+{
+  "metadata": {
+    "name": "Banking77-10Intents",
+    "task": "Customer Support Intent Classification",
+    "num_intents": 10,
+    "intents": [
+      "card_arrival",
+      "card_linking",
+      "exchange_rate",
+      "extra_charge_on_statement",
+      "lost_or_stolen_card",
+      "top_up_reverted",
+      "transfer_fee_charged",
+      "verify_identity",
+      "visa_or_mastercard",
+      "wrong_amount_additional_charge"
+    ],
+    "counts": {
+      "train": 120,
+      "val": 40,
+      "test": 80,
+      "total": 240
+    }
+  },
+  "train": [
+    {
+      "text": "When will my new card arrive in the mail?",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "I ordered a replacement card 5 days ago, how long does delivery usually take?",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "Is there a tracking number available for my physical card shipment?",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "My card has not arrived yet and it has been two weeks.",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "Can you tell me the expected delivery date for my debit card?",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "Where is my card? It should have arrived by Monday.",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "Will I receive a postal notification when my card is dispatched?",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "How many business days do I need to wait for my new card to get here?",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "I need my card before traveling on Friday, has it shipped out?",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "What postal service is delivering my debit card?",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "My tracking says card delivered but I haven't received anything.",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "Can I expedite the shipping of my replacement card?",
+      "intent": "card_arrival",
+      "split": "train"
+    },
+    {
+      "text": "How do I link an external debit card to my app account?",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "Can I connect my Chase bank card to this account?",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "Is it possible to add a secondary payment card to my wallet?",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "I am having trouble linking my Mastercard, it keeps throwing an error.",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "Steps to attach another debit card for funding my account?",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "Why won't my Visa card connect to the app?",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "Can I link a card that is not in my legal name?",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "How many external cards can I link to my account at once?",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "Where in settings can I manage my linked cards?",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "I want to connect my credit card to top up automatically.",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "My bank blocked the verification charge when linking my card.",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "Can I link a prepaid card from another provider?",
+      "intent": "card_linking",
+      "split": "train"
+    },
+    {
+      "text": "What foreign exchange rate do you use for converting EUR to USD?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "Do you charge an extra markup on currency exchanges during weekends?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "Where can I see live exchange rates in the application?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "How is the exchange rate calculated when I pay abroad?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "Is the exchange rate fixed or floating during card transactions?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "Why was the conversion rate different from what Google showed?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "Are there hidden fees baked into the currency exchange rate?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "What is the weekend exchange rate policy for British Pounds?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "Can I lock in a specific foreign currency exchange rate in advance?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "Do you use the interbank exchange rate for currency conversions?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "How much will it cost to convert 500 Euros into Japanese Yen?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "Is there a limit on how much currency I can convert at the real exchange rate?",
+      "intent": "exchange_rate",
+      "split": "train"
+    },
+    {
+      "text": "There is an unexpected charge of $14.99 on my bank statement.",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "I see a mystery fee on my account that I never authorized.",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "Why was I billed an extra $5 on my monthly statement?",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "There is an unknown recurring charge listed on my statement summary.",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "I noticed an extra transaction on my statement from a vendor I don't know.",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "Why did my account balance drop by $20 without any receipt?",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "I was charged twice for the same subscription on my statement.",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "Who authorized this unfamiliar fee on my statement?",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "Can you investigate an unauthorized charge showing on my latest statement?",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "There is a $2.50 maintenance fee on my statement that wasn't there before.",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "Why is there a duplicate transaction on my statement for grocery shopping?",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "I see an extra charge that appeared overnight on my account statement.",
+      "intent": "extra_charge_on_statement",
+      "split": "train"
+    },
+    {
+      "text": "I lost my wallet yesterday and need to freeze my card immediately.",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "My debit card was stolen out of my backpack on the train.",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "Help! Someone took my card and is making fraudulent transactions.",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "How do I permanently cancel a stolen card and request a replacement?",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "I think I left my card in an ATM, can you block it right away?",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "My card is missing, how do I temporarily freeze it from the app?",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "Someone pickpocketed my card, please lock my account now.",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "I suspect my card details were copied by a skimmer, please disable it.",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "I can't find my physical card anywhere, should I cancel it?",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "Emergency: my credit card was stolen in Barcelona, please deactivate it.",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "Can you lock my stolen card so no one can tap to pay?",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "I lost my card at a concert, how quickly can you issue a new one?",
+      "intent": "lost_or_stolen_card",
+      "split": "train"
+    },
+    {
+      "text": "My top up was reverted back to my originating bank account.",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "Why was my deposit of $200 cancelled and sent back?",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "I added funds yesterday but the top-up transaction was reverted today.",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "My top-up failed and the money went back into my external account.",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "The application says my recent top-up has been reverted.",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "Why did you reject my balance deposit and reverse the transaction?",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "My money showed in my balance for an hour and then was reverted.",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "What caused my card top-up to bounce back to my main bank?",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "I topped up $100 but received a notification that it was reversed.",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "How long until reverted top-up money is available back in my bank?",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "Can you explain why my recurring top up was automatically reverted?",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "The system cancelled my top-up payment and refunded it.",
+      "intent": "top_up_reverted",
+      "split": "train"
+    },
+    {
+      "text": "Why was I charged a $12 fee for sending money to my friend?",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "Do you charge a transfer fee for domestic bank transfers?",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "I didn't expect a commission fee on my international wire transfer.",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "How much is the transfer fee for sending money to an overseas account?",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "Can you break down the fees charged on my recent SEPA transfer?",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "Why was there a transaction fee deducted when I transferred money?",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "Are domestic peer-to-peer transfers completely free of charge?",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "I was charged an extra fee when sending money to another user.",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "What is the fee policy for SWIFT wire transfers?",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "Why did the recipient receive less money due to transfer fees?",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "Can I get a refund for the transfer fee charged by mistake?",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "Is there a fee for transferring money via local bank transfer?",
+      "intent": "transfer_fee_charged",
+      "split": "train"
+    },
+    {
+      "text": "How do I complete my identity verification in the mobile app?",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "My passport photo keeps getting rejected during verification.",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "Why is my KYC identity check still showing as pending after 3 days?",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "What documents are accepted to verify my legal identity?",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "Can I upload a national identity card instead of a passport for verification?",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "I am having trouble with the selfie verification camera step.",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "Why do I need to verify my identity before withdrawing funds?",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "How long does the identity verification review process take?",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "The app says my proof of address is expired, how do I re-verify?",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "Can you manually approve my identity documents?",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "Where in account settings can I re-submit my identity verification photos?",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "My driver's license was rejected during identity verification.",
+      "intent": "verify_identity",
+      "split": "train"
+    },
+    {
+      "text": "Is the debit card you provide a Visa or a Mastercard?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "Can I choose to have a Mastercard instead of a Visa card?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "What payment brand network does your card use?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "Do you offer both Visa and Mastercard options for customer cards?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "Are there any differences in merchant acceptance between your Visa and Mastercard?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "Why did I receive a Mastercard when my friend got a Visa?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "Can I request a Visa card specifically for traveling to Asia?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "Is your virtual card powered by Mastercard or Visa?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "Does the card brand affect foreign exchange fees?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "I only want a Visa debit card, can I request one during signup?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "Which card scheme do your commercial cards run on?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "Can I hold both a Visa and a Mastercard on the same account?",
+      "intent": "visa_or_mastercard",
+      "split": "train"
+    },
+    {
+      "text": "The restaurant charged me $45 but my receipt clearly says $35.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    },
+    {
+      "text": "I was charged the wrong amount for my grocery store purchase.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    },
+    {
+      "text": "The store overcharged me by $10 on my card payment.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    },
+    {
+      "text": "Why does the charged amount not match what the cashier told me?",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    },
+    {
+      "text": "My gas station pre-authorization charged a higher amount than the pump.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    },
+    {
+      "text": "The hotel billed me for $180 instead of the agreed $120 booking fee.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    },
+    {
+      "text": "I was overcharged on my card for taxi fare yesterday.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    },
+    {
+      "text": "The merchant entered the wrong total amount on the card terminal.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    },
+    {
+      "text": "Can I dispute a transaction because the merchant charged the wrong amount?",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    },
+    {
+      "text": "My invoice says $80 but $95 was debited from my account.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    },
+    {
+      "text": "I was charged an additional unexpected tip that I never authorized.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    },
+    {
+      "text": "The final bill amount is higher than the price shown on the checkout screen.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "train"
+    }
+  ],
+  "val": [
+    {
+      "text": "Has my new payment card been dispatched yet?",
+      "intent": "card_arrival",
+      "split": "val"
+    },
+    {
+      "text": "Estimated arrival time for my standard delivery debit card?",
+      "intent": "card_arrival",
+      "split": "val"
+    },
+    {
+      "text": "Still waiting on my physical card, is there a delay?",
+      "intent": "card_arrival",
+      "split": "val"
+    },
+    {
+      "text": "I was told 3-5 days for card arrival but it is day 7.",
+      "intent": "card_arrival",
+      "split": "val"
+    },
+    {
+      "text": "How do I add my existing debit card to the profile?",
+      "intent": "card_linking",
+      "split": "val"
+    },
+    {
+      "text": "It says card linking failed, please try again later.",
+      "intent": "card_linking",
+      "split": "val"
+    },
+    {
+      "text": "I want to connect a new payment card for deposits.",
+      "intent": "card_linking",
+      "split": "val"
+    },
+    {
+      "text": "Can I link an American Express card to this app?",
+      "intent": "card_linking",
+      "split": "val"
+    },
+    {
+      "text": "What is your current currency exchange fee structure?",
+      "intent": "exchange_rate",
+      "split": "val"
+    },
+    {
+      "text": "Will I get the interbank rate if I exchange money today?",
+      "intent": "exchange_rate",
+      "split": "val"
+    },
+    {
+      "text": "Why did the exchange rate change right before I completed the swap?",
+      "intent": "exchange_rate",
+      "split": "val"
+    },
+    {
+      "text": "Does your foreign currency exchange include a markup percentage?",
+      "intent": "exchange_rate",
+      "split": "val"
+    },
+    {
+      "text": "I have an unexplained charge on my statement from yesterday.",
+      "intent": "extra_charge_on_statement",
+      "split": "val"
+    },
+    {
+      "text": "Why does my statement show an additional unexpected fee?",
+      "intent": "extra_charge_on_statement",
+      "split": "val"
+    },
+    {
+      "text": "There's a charge on my bank statement that I did not make.",
+      "intent": "extra_charge_on_statement",
+      "split": "val"
+    },
+    {
+      "text": "Can you explain this extra deduction showing on my statement?",
+      "intent": "extra_charge_on_statement",
+      "split": "val"
+    },
+    {
+      "text": "My card was stolen this morning, please block it immediately.",
+      "intent": "lost_or_stolen_card",
+      "split": "val"
+    },
+    {
+      "text": "I dropped my card on the street and can't find it, what should I do?",
+      "intent": "lost_or_stolen_card",
+      "split": "val"
+    },
+    {
+      "text": "Someone stole my purse containing my payment card.",
+      "intent": "lost_or_stolen_card",
+      "split": "val"
+    },
+    {
+      "text": "Please freeze my card right now because it has gone missing.",
+      "intent": "lost_or_stolen_card",
+      "split": "val"
+    },
+    {
+      "text": "Why has my recent top up payment been reverted?",
+      "intent": "top_up_reverted",
+      "split": "val"
+    },
+    {
+      "text": "My balance deposit was cancelled and the funds were reverted.",
+      "intent": "top_up_reverted",
+      "split": "val"
+    },
+    {
+      "text": "The top up I did this morning was reverted without explanation.",
+      "intent": "top_up_reverted",
+      "split": "val"
+    },
+    {
+      "text": "Why did my money top-up bounce back to my card?",
+      "intent": "top_up_reverted",
+      "split": "val"
+    },
+    {
+      "text": "Why did you charge me a transfer fee on this transaction?",
+      "intent": "transfer_fee_charged",
+      "split": "val"
+    },
+    {
+      "text": "What is the cost or fee for sending a bank transfer abroad?",
+      "intent": "transfer_fee_charged",
+      "split": "val"
+    },
+    {
+      "text": "I was surprised to see a transfer fee deducted from my payment.",
+      "intent": "transfer_fee_charged",
+      "split": "val"
+    },
+    {
+      "text": "How much are transfer fees for sending money between accounts?",
+      "intent": "transfer_fee_charged",
+      "split": "val"
+    },
+    {
+      "text": "What is the status of my identity verification check?",
+      "intent": "verify_identity",
+      "split": "val"
+    },
+    {
+      "text": "How can I submit my documents to verify my identity?",
+      "intent": "verify_identity",
+      "split": "val"
+    },
+    {
+      "text": "Why has my identity verification not been approved yet?",
+      "intent": "verify_identity",
+      "split": "val"
+    },
+    {
+      "text": "I am stuck on the ID verification screen in the app.",
+      "intent": "verify_identity",
+      "split": "val"
+    },
+    {
+      "text": "Do you issue Visa cards or Mastercard cards?",
+      "intent": "visa_or_mastercard",
+      "split": "val"
+    },
+    {
+      "text": "Can I select between Visa and Mastercard when ordering my card?",
+      "intent": "visa_or_mastercard",
+      "split": "val"
+    },
+    {
+      "text": "Is my new physical card going to be a Visa or Mastercard?",
+      "intent": "visa_or_mastercard",
+      "split": "val"
+    },
+    {
+      "text": "What payment network brand is printed on the physical card?",
+      "intent": "visa_or_mastercard",
+      "split": "val"
+    },
+    {
+      "text": "The merchant charged me more money than the agreed total.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "val"
+    },
+    {
+      "text": "Why was I billed an incorrect higher amount for this purchase?",
+      "intent": "wrong_amount_additional_charge",
+      "split": "val"
+    },
+    {
+      "text": "I have a receipt showing $25 but my transaction history says $32.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "val"
+    },
+    {
+      "text": "The store charged me the wrong amount on my debit card.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "val"
+    }
+  ],
+  "test": [
+    {
+      "text": "When can I expect my debit card to reach my home address?",
+      "intent": "card_arrival",
+      "split": "test"
+    },
+    {
+      "text": "I haven't received my card yet, can you check shipping status?",
+      "intent": "card_arrival",
+      "split": "test"
+    },
+    {
+      "text": "How long does standard delivery take for debit cards in the UK?",
+      "intent": "card_arrival",
+      "split": "test"
+    },
+    {
+      "text": "My card should have arrived yesterday, what should I do?",
+      "intent": "card_arrival",
+      "split": "test"
+    },
+    {
+      "text": "Is my card on its way? It's been over a week since ordering.",
+      "intent": "card_arrival",
+      "split": "test"
+    },
+    {
+      "text": "Do you provide a tracking link for card deliveries?",
+      "intent": "card_arrival",
+      "split": "test"
+    },
+    {
+      "text": "Can someone verify if my replacement card has been mailed?",
+      "intent": "card_arrival",
+      "split": "test"
+    },
+    {
+      "text": "My card is overdue, did it get lost in transit?",
+      "intent": "card_arrival",
+      "split": "test"
+    },
+    {
+      "text": "What is the procedure for linking a new card to my account?",
+      "intent": "card_linking",
+      "split": "test"
+    },
+    {
+      "text": "Why is the app refusing to connect my external debit card?",
+      "intent": "card_linking",
+      "split": "test"
+    },
+    {
+      "text": "I would like to link my corporate credit card to my balance.",
+      "intent": "card_linking",
+      "split": "test"
+    },
+    {
+      "text": "Is there a limit on how many cards I can attach to my profile?",
+      "intent": "card_linking",
+      "split": "test"
+    },
+    {
+      "text": "How do I verify the small deposit when linking a new card?",
+      "intent": "card_linking",
+      "split": "test"
+    },
+    {
+      "text": "Can I connect my overseas bank card to this system?",
+      "intent": "card_linking",
+      "split": "test"
+    },
+    {
+      "text": "The app crashed while I was trying to link my card.",
+      "intent": "card_linking",
+      "split": "test"
+    },
+    {
+      "text": "How do I remove an old linked card and add a fresh one?",
+      "intent": "card_linking",
+      "split": "test"
+    },
+    {
+      "text": "What exchange rate applies when I spend money in Europe?",
+      "intent": "exchange_rate",
+      "split": "test"
+    },
+    {
+      "text": "Can you explain how currency conversion rates are determined?",
+      "intent": "exchange_rate",
+      "split": "test"
+    },
+    {
+      "text": "Is there a weekend fee added on top of the foreign exchange rate?",
+      "intent": "exchange_rate",
+      "split": "test"
+    },
+    {
+      "text": "Where can I check the live conversion rate between GBP and USD?",
+      "intent": "exchange_rate",
+      "split": "test"
+    },
+    {
+      "text": "Why is the exchange rate higher today than yesterday?",
+      "intent": "exchange_rate",
+      "split": "test"
+    },
+    {
+      "text": "Do you charge commission on top of the interbank exchange rate?",
+      "intent": "exchange_rate",
+      "split": "test"
+    },
+    {
+      "text": "How do I check the exchange rate for Polish Zloty before sending?",
+      "intent": "exchange_rate",
+      "split": "test"
+    },
+    {
+      "text": "What FX rate is applied when withdrawing local currency from foreign ATMs?",
+      "intent": "exchange_rate",
+      "split": "test"
+    },
+    {
+      "text": "There is an unrecognized charge of $32 on my statement, what is it for?",
+      "intent": "extra_charge_on_statement",
+      "split": "test"
+    },
+    {
+      "text": "I noticed an extra fee on my recent account statement that looks suspicious.",
+      "intent": "extra_charge_on_statement",
+      "split": "test"
+    },
+    {
+      "text": "Why do I have an extra line item charge on my statement this month?",
+      "intent": "extra_charge_on_statement",
+      "split": "test"
+    },
+    {
+      "text": "Can you help me dispute an unexpected charge on my statement?",
+      "intent": "extra_charge_on_statement",
+      "split": "test"
+    },
+    {
+      "text": "My statement shows two charges from the same coffee shop at the exact same minute.",
+      "intent": "extra_charge_on_statement",
+      "split": "test"
+    },
+    {
+      "text": "What is this mystery $10 debit on my monthly statement?",
+      "intent": "extra_charge_on_statement",
+      "split": "test"
+    },
+    {
+      "text": "There is an extra charge on my card statement from an unknown company.",
+      "intent": "extra_charge_on_statement",
+      "split": "test"
+    },
+    {
+      "text": "I don't recognize the latest charge on my statement summary.",
+      "intent": "extra_charge_on_statement",
+      "split": "test"
+    },
+    {
+      "text": "I lost my physical card, can you deactivate it immediately?",
+      "intent": "lost_or_stolen_card",
+      "split": "test"
+    },
+    {
+      "text": "My card was stolen from my gym locker, please block all charges.",
+      "intent": "lost_or_stolen_card",
+      "split": "test"
+    },
+    {
+      "text": "Someone is using my stolen card, please cancel it urgently!",
+      "intent": "lost_or_stolen_card",
+      "split": "test"
+    },
+    {
+      "text": "How do I report my debit card as lost and get a new one?",
+      "intent": "lost_or_stolen_card",
+      "split": "test"
+    },
+    {
+      "text": "I misplaced my card in a taxi, can I temporarily freeze it?",
+      "intent": "lost_or_stolen_card",
+      "split": "test"
+    },
+    {
+      "text": "My card was taken along with my wallet, please freeze it.",
+      "intent": "lost_or_stolen_card",
+      "split": "test"
+    },
+    {
+      "text": "I think someone stole my card information, can you void the card?",
+      "intent": "lost_or_stolen_card",
+      "split": "test"
+    },
+    {
+      "text": "What should I do first if my card has been stolen while overseas?",
+      "intent": "lost_or_stolen_card",
+      "split": "test"
+    },
+    {
+      "text": "Why was my $150 top up transaction reverted by your system?",
+      "intent": "top_up_reverted",
+      "split": "test"
+    },
+    {
+      "text": "I tried topping up my account but the funds were automatically sent back.",
+      "intent": "top_up_reverted",
+      "split": "test"
+    },
+    {
+      "text": "My top-up says reverted, when will my external bank show the refund?",
+      "intent": "top_up_reverted",
+      "split": "test"
+    },
+    {
+      "text": "What are the typical reasons for a top-up being reverted?",
+      "intent": "top_up_reverted",
+      "split": "test"
+    },
+    {
+      "text": "The app reverted my deposit after initially approving it.",
+      "intent": "top_up_reverted",
+      "split": "test"
+    },
+    {
+      "text": "Why was my debit card top-up cancelled and returned to sender?",
+      "intent": "top_up_reverted",
+      "split": "test"
+    },
+    {
+      "text": "My top up bounced back and my balance is back to zero.",
+      "intent": "top_up_reverted",
+      "split": "test"
+    },
+    {
+      "text": "Can you un-revert a top up or do I have to initiate a new deposit?",
+      "intent": "top_up_reverted",
+      "split": "test"
+    },
+    {
+      "text": "Why was a fee applied to my money transfer yesterday?",
+      "intent": "transfer_fee_charged",
+      "split": "test"
+    },
+    {
+      "text": "How much is the fee for an international bank transfer?",
+      "intent": "transfer_fee_charged",
+      "split": "test"
+    },
+    {
+      "text": "I thought transfers were free, why was a transfer charge deducted?",
+      "intent": "transfer_fee_charged",
+      "split": "test"
+    },
+    {
+      "text": "Can you explain the transfer fee shown on my payment confirmation?",
+      "intent": "transfer_fee_charged",
+      "split": "test"
+    },
+    {
+      "text": "Why was $15 taken off as a transfer fee for my wire transfer?",
+      "intent": "transfer_fee_charged",
+      "split": "test"
+    },
+    {
+      "text": "Does sending funds in another currency incur a transfer commission?",
+      "intent": "transfer_fee_charged",
+      "split": "test"
+    },
+    {
+      "text": "Are there any fees when I transfer funds to another member?",
+      "intent": "transfer_fee_charged",
+      "split": "test"
+    },
+    {
+      "text": "Why did my beneficiary get less money after transfer fees were taken?",
+      "intent": "transfer_fee_charged",
+      "split": "test"
+    },
+    {
+      "text": "What documents do I need to submit to verify my identity?",
+      "intent": "verify_identity",
+      "split": "test"
+    },
+    {
+      "text": "Why is my identity verification still pending after 48 hours?",
+      "intent": "verify_identity",
+      "split": "test"
+    },
+    {
+      "text": "My selfie verification failed multiple times, can someone help?",
+      "intent": "verify_identity",
+      "split": "test"
+    },
+    {
+      "text": "Can I verify my identity using a residence permit?",
+      "intent": "verify_identity",
+      "split": "test"
+    },
+    {
+      "text": "How do I know if my identity verification was approved successfully?",
+      "intent": "verify_identity",
+      "split": "test"
+    },
+    {
+      "text": "Why was my passport rejected during the identity verification step?",
+      "intent": "verify_identity",
+      "split": "test"
+    },
+    {
+      "text": "Is it mandatory to complete identity verification to send money?",
+      "intent": "verify_identity",
+      "split": "test"
+    },
+    {
+      "text": "The camera won't focus on my document during the identity check.",
+      "intent": "verify_identity",
+      "split": "test"
+    },
+    {
+      "text": "Is my card a Visa card or a Mastercard?",
+      "intent": "visa_or_mastercard",
+      "split": "test"
+    },
+    {
+      "text": "Can I switch my existing card from Visa to Mastercard?",
+      "intent": "visa_or_mastercard",
+      "split": "test"
+    },
+    {
+      "text": "Why does my digital card show Mastercard but my friend has Visa?",
+      "intent": "visa_or_mastercard",
+      "split": "test"
+    },
+    {
+      "text": "Do you have an option to order a Visa debit card?",
+      "intent": "visa_or_mastercard",
+      "split": "test"
+    },
+    {
+      "text": "What are the benefits of Mastercard compared to Visa on this account?",
+      "intent": "visa_or_mastercard",
+      "split": "test"
+    },
+    {
+      "text": "Are both Visa and Mastercard accepted globally everywhere?",
+      "intent": "visa_or_mastercard",
+      "split": "test"
+    },
+    {
+      "text": "Which card network is used for your premium cards?",
+      "intent": "visa_or_mastercard",
+      "split": "test"
+    },
+    {
+      "text": "Can I get a secondary card issued by Visa if my main is Mastercard?",
+      "intent": "visa_or_mastercard",
+      "split": "test"
+    },
+    {
+      "text": "The merchant debited the wrong total amount from my account.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "test"
+    },
+    {
+      "text": "I was charged $60 instead of $40 at the restaurant last night.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "test"
+    },
+    {
+      "text": "My receipt shows $15.50 but my card was charged $25.50.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "test"
+    },
+    {
+      "text": "How do I dispute a transaction where the merchant entered the wrong amount?",
+      "intent": "wrong_amount_additional_charge",
+      "split": "test"
+    },
+    {
+      "text": "The shopkeeper charged me twice the price by mistake.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "test"
+    },
+    {
+      "text": "Why was the charge higher than the bill I signed for?",
+      "intent": "wrong_amount_additional_charge",
+      "split": "test"
+    },
+    {
+      "text": "I was overcharged by $15 on my recent card payment, can I get it refunded?",
+      "intent": "wrong_amount_additional_charge",
+      "split": "test"
+    },
+    {
+      "text": "The retailer charged an incorrect extra sum on top of my order price.",
+      "intent": "wrong_amount_additional_charge",
+      "split": "test"
+    }
+  ]
+}
