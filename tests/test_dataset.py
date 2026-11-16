@@ -40,3 +40,58 @@ def test_few_shot_demonstrations():
     assert len(demos) == 10
     intents_represented = set(d["intent"] for d in demos)
     assert len(intents_represented) == 10
+
+
+def test_dataset_examples_have_valid_intents():
+    dataset = get_dataset()
+    valid_intents = set(dataset.get_intents())
+
+    all_examples = (
+        dataset.get_train_examples()
+        + dataset.get_val_examples()
+        + dataset.get_test_examples()
+    )
+
+    for item in all_examples:
+        assert "intent" in item
+        assert item["intent"] in valid_intents
+
+
+def test_dataset_splits_have_no_overlap():
+    dataset = get_dataset()
+
+    train_data = dataset.get_train_examples()
+    val_data = dataset.get_val_examples()
+    test_data = dataset.get_test_examples()
+
+    train_set = {repr(sorted(item.items())) for item in train_data}
+    val_set = {repr(sorted(item.items())) for item in val_data}
+    test_set = {repr(sorted(item.items())) for item in test_data}
+
+    assert train_set.isdisjoint(val_set)
+    assert train_set.isdisjoint(test_set)
+    assert val_set.isdisjoint(test_set)
+
+
+def test_few_shot_demonstrations_are_balanced():
+    dataset = get_dataset()
+
+    demos = dataset.get_few_shot_demonstrations(
+        n_shots_per_intent=2
+    )
+
+    assert len(demos) == 20
+
+    for intent in dataset.get_intents():
+        count = sum(1 for item in demos if item["intent"] == intent)
+        assert count == 2
+
+
+def test_intent_descriptions_are_available():
+    dataset = get_dataset()
+
+    for intent in dataset.get_intents():
+        description = dataset.get_intent_description(intent)
+
+        assert isinstance(description, str)
+        assert description.strip() != ""
